@@ -3,12 +3,36 @@ plugins for the SW Proxy
 
 To get the latest versions of the plugins that are guaranteed to work with the latest SWProxy release, please visit the [Releases](https://github.com/lstern/SWProxy-plugins/releases) section. If you download the plugins directly from the repository they may not be fully compatible with the latest release of SWProxy and may have some reduced or no functionality.
 
-Each plugin has 2 files, a .py file with the actual plugin code and a .yapsy-plugin file with the plugin description. 
+Each plugin has 2 files, a .py file with the actual plugin code and a .yapsy-plugin file with the plugin description.
 To install the plugins just drop the desired plugins in the /plugins folder, copy and edit the .config file to the parent folder and restart sw proxy.
 
 You can have multiple users connected and actively using the same proxy. It will separate users based on their user_id and create separate files for each account.
 
 * [Video Tutorial](https://www.youtube.com/watch?v=T4zI6HViV9g)
+
+### Install
+Install [Python >= 3.6](https://www.python.org/downloads/)
+```
+git clone https://github.com/fnk93/SWProxy-plugins.git
+cd SWProxy-plugins
+py -m pip install --user virtualenv
+```
+Now either set up a virtual environment or install to your main python distribution.
+```
+py -m venv env
+.\env\Scripts\activate
+pip install -r requirements.txt
+```
+
+### Run
+Run the proxy through mitmdump
+Alternative way up to do.
+Open your shell / PowerShell in the SWProy-plugins folder
+```
+.\env\Scripts\activate
+mitmdump -s ./mitm_script.py --ignore-hosts '^((?!qpyou\.cn).)*$'
+```
+This will listen on port 8080 on your current ip.
 
 ### Arena Logger
 Logs all attacks you make including rivals. In order to correctly record the opponent's name, the proxy must be connected when your phone recieves the arena log (on login, list refresh or when a new attack is recieved), otherwise it will just record the enemy team. The output filename is [user_id]_arena.csv
@@ -29,7 +53,7 @@ Will log raid results including time, reward and raid members. The output filena
 This plugin will generate extra data when visiting friend. The extra data is intended to help with guild recruit evaluation.
 
 ### Run Logger
-Will log runs and drops from Necro, Dragons, Giants, elemental halls and HoH. The outut filename is [user_id]_runs.csv  
+Will log runs and drops from Necro, Dragons, Giants, elemental halls and HoH. The outut filename is [user_id]_runs.csv
 
 ### Summon Logger
 Will log summons of any type of scroll, including social and crystal summon. Does not work with individual monster pieces (from SD).  The outut filename is [user_id]_summons.csv
