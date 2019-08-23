@@ -30,7 +30,7 @@ Alternative way up to do.
 Open your shell / PowerShell in the SWProy-plugins folder
 ```
 .\env\Scripts\activate
-mitmdump -s ./mitm_script.py --ignore-hosts '^((?!qpyou\.cn).)*$'
+mitmdump -s ./SWProxy_https.py --ignore-hosts '^((?!qpyou\.cn).)*$'
 ```
 This will listen on port 8080 on your current ip.
 
