@@ -61,8 +61,8 @@ Android (7+):
 2. Download certificate
 3. Rename certificate to ca.crt
 4. Install app "Root Certificate Manager"
-5. Install certificate in that app.
-6. Hide root
+5. Install certificate with "Root Certificate Manager" (Certificate will be pushed to system certificates and renamed properly).
+6. Hide root (with Magisk Hide for example: Select "Summoners War")
 ```
 
 ### Arena Logger
